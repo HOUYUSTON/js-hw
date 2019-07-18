@@ -14,9 +14,9 @@ const promise = new Promise(
 		request.send()
 	}
 ).then (
-	{
+	function (text) {
 		console.log(text)
-		text => memes = JSON.parse(text)
+		memes = JSON.parse(text)
 	}
 )
 .catch (
