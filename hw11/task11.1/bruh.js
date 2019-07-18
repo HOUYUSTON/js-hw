@@ -16,6 +16,12 @@ const promise = new Promise(
 ).then (
 	text => memes = JSON.parse(text)
 )
+.catch (
+	function (text) {
+		let p = document.body.appendChild(document.createElement("p"))
+		p.textContent = text
+	}
+)
 
 memes.forEach(
 	function (meme) {
