@@ -1,4 +1,4 @@
-var memes
+var memes = []
 
 const promise = new Promise(
 	function(resolve, reject) {
