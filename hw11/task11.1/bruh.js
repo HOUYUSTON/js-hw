@@ -17,6 +17,8 @@ const promise = new Promise(
 	function (text) {
 		console.log(text)
 		memes = JSON.parse(text)
+		console.log(JSON.parse(text))
+		console.log(memes)
 	}
 )
 .catch (
