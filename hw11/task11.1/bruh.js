@@ -11,8 +11,8 @@ const promise = new Promise(
 					reject(this.responseText) :
 				null
 		}
+		request.send()
 	}
-	request.send()
 ).then (
 	text => memes = JSON.parse(text)
 )
