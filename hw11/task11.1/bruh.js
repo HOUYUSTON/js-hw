@@ -23,6 +23,7 @@ const promise = new Promise(
 	}
 )
 
+console.log(memes)
 memes.forEach(
 	function (meme) {
 		let div = document.body.appendChild(document.createElement("div"))
