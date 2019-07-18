@@ -15,26 +15,21 @@ const promise = new Promise(
 	}
 ).then (
 	function (text) {
-		console.log(text)
 		memes = JSON.parse(text)
-		console.log(JSON.parse(text))
-		console.log(memes)
+		memes.forEach(
+		function (meme) {
+			let div = document.body.appendChild(document.createElement("div"))
+			let img = div.appendChild(document.createElement("img"))
+			let p = div.appendChild(document.createElement("p"))
+			img.src = meme.ref
+			p.textContent = meme.title
+	}
+)
 	}
 )
 .catch (
 	function (text) {
 		let p = document.body.appendChild(document.createElement("p"))
 		p.textContent = text
-	}
-)
-
-console.log(memes)
-memes.forEach(
-	function (meme) {
-		let div = document.body.appendChild(document.createElement("div"))
-		let img = div.appendChild(document.createElement("img"))
-		let p = div.appendChild(document.createElement("p"))
-		img.src = meme.ref
-		p.textContent = meme.title
 	}
 )
