@@ -3,7 +3,7 @@ var memes
 const promise = new Promise(
 	function(resolve, reject) {
 		const request = new XMLHttpRequest
-		request.open("GET","https://github.com/HOUYUSTON/js-hw/blob/master/hw11/task11.1/data.json")
+		request.open("GET","https://houyuston.github.io/js-hw/hw11/task11.1/data.json")
 		request.onreadystatechange = function (event) {
 			this.readyState === 4 ?
 				this.status === 200 ?
