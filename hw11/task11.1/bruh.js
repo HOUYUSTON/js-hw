@@ -7,9 +7,12 @@ const promise = new Promise(
 		request.onreadystatechange = function (event) {
 			this.readyState === 4 ?
 				this.status === 200 ?
-					resolve(this.responseText)
+					resolve(this.responseText) :
+					reject(this.responseText) :
+				null
 		}
 	}
+	request.send()
 ).then (
 	text => memes = JSON.parse(text)
 )
