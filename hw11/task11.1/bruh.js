@@ -14,21 +14,22 @@ const promise = new Promise(
 		request.send()
 	}
 ).then (
-	text => memes = JSON.parse(text)
+	function (text) {
+		memes = JSON.parse(text)
+		memes.forEach(
+		function (meme) {
+			let div = document.body.appendChild(document.createElement("div"))
+			let img = div.appendChild(document.createElement("img"))
+			let p = div.appendChild(document.createElement("p"))
+			img.src = meme.ref
+			p.textContent = meme.title
+	}
+)
+	}
 )
 .catch (
 	function (text) {
 		let p = document.body.appendChild(document.createElement("p"))
 		p.textContent = text
-	}
-)
-
-memes.forEach(
-	function (meme) {
-		let div = document.body.appendChild(document.createElement("div"))
-		let img = div.appendChild(document.createElement("img"))
-		let p = div.appendChild(document.createElement("p"))
-		img.src = meme.ref
-		p.textContent = meme.title
 	}
 )
